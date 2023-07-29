@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('videogames', function (Blueprint $table) {
             $table->id();
+            $table->string('nome');
+            $table->string('prezzo');
+            $table->boolean('maggiore_18_anni');
             $table->timestamps();
         });
     }

@@ -16,6 +16,13 @@
                         <p>Numero carrozze: <strong>{{ $train->numero_carrozze }}</strong></p>
                         <p>In orario: <strong>{{ $train->in_orario ? 'Si' : 'No' }}</strong></p>
                         <p>Cancellazione: <strong>{{ $train->cancellato ? 'Si' : 'No' }}</strong></p>
+                        <p>Data partenza: <strong>{{ $train->data_partenza }}</strong></p>
+                        <p>Data odierna: <strong>{{ $train->data_odierna }}</strong></p>
+                        @if($train->data_partenza !== $train->data_odierna)
+                            <h3>Oggi non partirò</h3>
+                        @else
+                            <h3>Io oggi parto</h3>
+                        @endif
                     </div>
                 </div>
             @endforeach

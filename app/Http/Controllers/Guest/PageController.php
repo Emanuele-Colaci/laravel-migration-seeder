@@ -10,7 +10,8 @@ use App\Models\Train;
 class PageController extends Controller
 {
     public function index(){
-        $trains = Train::all();
+        $now = date('Y-m-d', strtotime(now()));
+        $trains = Train::where('data_partenza', '>=', $now)->get();
         return view('home', compact('trains'));
     }
 }

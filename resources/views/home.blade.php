@@ -27,6 +27,18 @@
                 </div>
             @endforeach
         </div>
+        <div class="row mt-5">
+            <h1 class="mb-3">Videogames</h1>
+            @foreach($videogame as $videogame)
+                <div class="col-4">
+                    <div class="card p-3 mb-3">
+                        <h3>Nome Gioco: <strong>{{ $videogame->nome }}</strong></h3>
+                        <p>Prezzo: <strong>{{ $videogame->prezzo }}</strong></p>
+                        <p>Maggiore di 18 anni: <strong>{{ $videogame->maggiore_18_anni ? 'Si' : 'No' }}</strong></p>
+                    </div>
+                </div>
+            @endforeach
+        </div>
 
     </div>
 @endsection
